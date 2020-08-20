@@ -9,7 +9,8 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
     name = models.CharField(max_length=254)
-    friendly_name = models.CharField(max_length=254, blank=True)
+    friendly_name = models.CharField(max_length=254, null=True,\
+                                     blank=True)
 
     def __str__(self):
         return self.name
@@ -24,6 +25,7 @@ class Product(models.Model):
     sku = models.CharField(max_length=254, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
+    has_sizes = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(max_digits=6,
                                  decimal_places=2, null=True, blank=True)
