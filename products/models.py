@@ -9,7 +9,7 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
     name = models.CharField(max_length=254)
-    friendly_name = models.CharField(max_length=254, null=True,\
+    friendly_name = models.CharField(max_length=254, null=True,
                                      blank=True)
 
     def __str__(self):
